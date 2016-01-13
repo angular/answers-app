@@ -25,15 +25,15 @@ class SideNavContent {
     }
   }
   setOpen(){
-    this.renderer.setElementClass(this.el, 'side-nav__content--animatable', true);
-    this.renderer.setElementStyle(this.el, 'transform', 'translateX(0px)');
+    this.renderer.setElementClass(this.el.nativeElement, 'side-nav__content--animatable', true);
+    this.renderer.setElementStyle(this.el.nativeElement, 'transform', 'translateX(0px)');
   }
   setClosed(){
-    this.renderer.setElementClass(this.el, 'side-nav__content--animatable', true);
-    this.renderer.setElementStyle(this.el, 'transform', 'translateX(-102%)');
+    this.renderer.setElementClass(this.el.nativeElement, 'side-nav__content--animatable', true);
+    this.renderer.setElementStyle(this.el.nativeElement, 'transform', 'translateX(-102%)');
   }
   cleanup(){
-    this.renderer.setElementClass(this.el, 'side-nav__content--animatable', false);
+    this.renderer.setElementClass(this.el.nativeElement, 'side-nav__content--animatable', false);
   }
   
 }
