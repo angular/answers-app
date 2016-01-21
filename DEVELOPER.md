@@ -20,3 +20,12 @@ Or
 $ npm install -g karma
 $ karma start
 ```
+
+### Run the Universal server locally:
+
+```
+$ gulp
+$ npm run start_universal
+```
+
+Then navigate to localhost:3000
