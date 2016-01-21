@@ -13,11 +13,15 @@ export class Backend {
 	authState: ReplaySubject<any> = new ReplaySubject(1);
 	ref: Firebase;
 	constructor(config: BackendConfig){
-		this.ref = new Firebase(config.url);
+    try {
+      this.ref = new Firebase(config.url);
+    } catch(e) {
+      console.error('something went wrong', config.url, e);
+    }
 	}
 	authenticate(){
 		let authRequest = new Observable(obs => {
-			
+
 			this.ref.authWithOAuthPopup('github', (err, res) => {
 				if(err){
 					obs.error(err);
@@ -26,10 +30,10 @@ export class Backend {
 					obs.next(res);
 				}
 			})
-			
+
 		});
-		
+
 		authRequest.subscribe(this.authState);
-		
+
 	}
 }
