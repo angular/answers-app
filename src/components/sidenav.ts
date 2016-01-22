@@ -49,7 +49,8 @@ class SideNavContent {
       </div>
 
       <div class="side-nav__body">
-        <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/Home']">Index</a>
+        <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/CreateQuestion']">Ask a New Question</a>
+        <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/Questions']">Questions</a>
         <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/About']">About</a>
         <a role="tab" tabindex="0" class="side-nav__blog-post" href="/url-2">URL 2</a>
       </div>

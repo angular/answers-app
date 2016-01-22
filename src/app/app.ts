@@ -13,7 +13,9 @@ import {SideNav} from '../components/sidenav';
 import {Toast} from '../components/toast';
 
 //routable components
-import {Home} from '../components/Home';
+import {QuestionsContainer} from '../containers/questions';
+import {QuestionDetailContainer} from '../containers/questionDetail';
+import {CreateQuestionContainer} from '../containers/createQuestion';
 import {About} from '../components/About';
 
 @Component({
@@ -29,7 +31,9 @@ import {About} from '../components/About';
 		<side-nav></side-nav>`,
 })
 @RouteConfig([
-	new Route({ name: 'Home', component: Home, path: '/home', useAsDefault: true }),
+	new Route({ name: 'Questions', component: QuestionsContainer, path: '/questions', useAsDefault: true }),
+  new Route({ name: 'QuestionDetail', component: QuestionDetailContainer, path: '/questions/:id'}),
+  new Route({ name: 'CreateQuestion', component: CreateQuestionContainer, path: '/questions/new'}),
 	new Route({ name: 'About', component: About, path: '/about' })
 ])
 export class App {
