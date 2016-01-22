@@ -8,7 +8,8 @@ import {Component} from 'angular2/core';
 })
 export class Toast {
 	visible = false;
-	show(message){
+  message: string;
+	show(message:string){
 		this.message = message;
 		this.visible = true;
 		setTimeout(() => {
