@@ -1,4 +1,6 @@
-import Firebase from 'firebase';
+/// <reference path="../../typings/tsd.d.ts" />
+
+import * as Firebase from 'firebase';
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {ReplaySubject} from 'rxjs/subject/ReplaySubject';
@@ -21,7 +23,6 @@ export class Backend {
 	}
 	authenticate(){
 		let authRequest = new Observable(obs => {
-
 			this.ref.authWithOAuthPopup('github', (err, res) => {
 				if(err){
 					obs.error(err);

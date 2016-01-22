@@ -1,3 +1,5 @@
+/// <reference path="../typings/tsd.d.ts" />
+
 import * as path from 'path';
 import * as express from 'express';
 import {SERVER_LOCATION_PROVIDERS, ng2engine} from 'angular2-universal-preview/dist/server';

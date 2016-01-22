@@ -4,13 +4,18 @@
         "target": "es5",
         "noImplicitAny": false,
         "outDir": "build",
-        "rootDir": ".",
+        "rootDir": "src",
         "sourceMap": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "noResolve": false
     },
+    "files": [
+      "src/main.ts",
+      "src/main-server.ts"
+    ],
     "exclude": [
-        "node_modules"
+        "node_modules/"
     ]
 }
