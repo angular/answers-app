@@ -1,6 +1,6 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import * as Firebase from 'firebase';
+import Firebase from 'firebase'
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {ReplaySubject} from 'rxjs/subject/ReplaySubject';
@@ -8,7 +8,6 @@ import {ReplaySubject} from 'rxjs/subject/ReplaySubject';
 export class BackendConfig {
 	url: string;
 }
-
 
 @Injectable()
 export class Backend {

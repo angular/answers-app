@@ -14,9 +14,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: center;
+  justify-content: space-between;
+ // align-items: stretch;
   transition: transform 0.233s cubic-bezier(0,0,0.21,1) 0.1s;
 }
 
@@ -49,4 +48,14 @@
   font-size: 20px;
   margin: 0;
   flex: 1;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.header__item {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  color: #FFF;
+  text-decoration: none;
 }

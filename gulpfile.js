@@ -3,7 +3,7 @@ var tsregister = require('ts-node/register');
 var tsconfig = require('./tsconfig.json');
 
 var config = {
-	index: 'src/index.html',
+	index: 'src/index.ng2.html',
 	css:['src/**/*.scss'],
 	staticFiles: [
 		'src/**/*',

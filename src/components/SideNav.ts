@@ -12,9 +12,9 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 })
 class SideNavContent {
   @Input() open: boolean;
-   
+
   constructor(private el: ElementRef, private renderer: Renderer){
-    
+
   }
   ngOnChanges(changes:any){
     if(changes.open.currentValue && changes.open.previousValue !== undefined){
@@ -35,7 +35,7 @@ class SideNavContent {
   cleanup(){
     this.renderer.setElementClass(this.el.nativeElement, 'side-nav__content--animatable', false);
   }
-  
+
 }
 
 @Component({
@@ -43,13 +43,14 @@ class SideNavContent {
   directives: [SideNavContent, ROUTER_DIRECTIVES],
 	template: `
 	  <section class="side-nav js-side-nav" [class.side-nav--visible]="isVisible | async" (click)="nav.close()">
-  	 <div side-nav-content class="side-nav__content js-side-nav-content" [open]="isVisible | async">
+	 <div side-nav-content class="side-nav__content js-side-nav-content" [open]="isVisible | async">
         <div class="side-nav__header">
         <h1 class="side-nav__title">App shell</h1>
       </div>
 
       <div class="side-nav__body">
-        <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/Home']">Index</a>
+        <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/CreateQuestion']">Ask a New Question</a>
+        <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/Questions']">Questions</a>
         <a role="tab" tabindex="0" class="side-nav__blog-post" [routerLink]="['/About']">About</a>
         <a role="tab" tabindex="0" class="side-nav__blog-post" href="/url-2">URL 2</a>
       </div>
