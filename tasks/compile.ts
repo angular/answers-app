@@ -6,7 +6,7 @@ var ts = require('gulp-typescript');
 
 export const compile = (gulp, config) => {
   gulp.task('compile:main-server', () => {
-    return gulp.src('src/**/*.ts')
+    return gulp.src(['src/**/*.ts'])
       .pipe(ts({
         noImplicitAny: false,
         typescript: require('typescript'),
@@ -35,16 +35,6 @@ export const compile = (gulp, config) => {
 		return builder.loadConfig(config.system.configFile)
 		  .then(() => {
 				return builder.bundle('app - [app/**/*]', 'dist/vendor.js', {minify: util.env.production})
-			})
-	});
-
-	gulp.task('compile:serviceworker', [], () => {
-
-		let builder = new Builder();
-
-		return builder.loadConfig(config.system.configFile)
-		  .then(() => {
-				return builder.buildStatic('app/ng2-service-worker', 'dist/worker.js', {minify: util.env.production})
 			})
 	});
 }
