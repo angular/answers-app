@@ -37,7 +37,6 @@
     "systemjs": "^0.19.6",
     "systemjs-builder": "^0.14.11",
     "ts-node": "^0.5.4",
-    "tsd": "^0.6.5",
     "typescript": "^1.7.3",
     "typescript-node": "^0.1.3"
   }
