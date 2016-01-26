@@ -1,0 +1,25 @@
+CACHE MANIFEST
+# sw.bundle: app
+# sw.version: 1
+# core application files
+/index.html
+/css/core.css
+/angular2-polyfills.js
+/system.js
+/vendor.js
+/app.js
+/app-shell.js
+/util/styleloader.js
+# images
+/images/apple-touch-icon.png
+/images/chrome-splashscreen-icon-384x384.png
+/images/chrome-touch-icon-192x192.png
+/images/ic_add_24px.svg
+/images/ic_info_outline_24px.svg
+/images/ic_menu_24px.svg
+/images/icon-128x128.png
+/images/side-nav-bg@2x.jpg
+# external deps
+https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,400italic
+# routes
+# sw.route: /home /index.html

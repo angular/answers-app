@@ -8,6 +8,7 @@ var config = {
 	staticFiles: [
 		'src/**/*',
 		'!src/**/*.ts',
+		'manifest.appcache',
 		'node_modules/systemjs/dist/system.js',
 		'node_modules/angular2/bundles/angular2-polyfills.js'
 		],
