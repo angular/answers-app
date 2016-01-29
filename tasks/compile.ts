@@ -4,17 +4,12 @@ var Builder = require('systemjs-builder');
 var util = require('gulp-util');
 var ts = require('gulp-typescript');
 
+var tsProject = ts.createProject('tsconfig.json');
+
 export const compile = (gulp, config) => {
   gulp.task('compile:main-server', () => {
-    return gulp.src('src/**/*.ts')
-      .pipe(ts({
-        noImplicitAny: false,
-        typescript: require('typescript'),
-        module: 'commonjs',
-        emitDecoratorMetadata: true,
-        experimentalDecorators: true,
-        moduleResolution: 'node'
-      }))
+    return tsProject.src()
+      .pipe(ts(tsProject))
       .pipe(gulp.dest('dist/app'));
   });
 

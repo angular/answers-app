@@ -12,10 +12,9 @@
         "noResolve": false
     },
     "files": [
-      "src/main.ts",
-      "src/main-server.ts"
-    ],
-    "exclude": [
-        "node_modules/"
+        "typings/main.d.ts",
+        "src/main.ts",
+        "src/main-server.ts",
+        "src/ng2-service-worker.ts"
     ]
 }
