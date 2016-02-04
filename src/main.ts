@@ -1,3 +1,4 @@
+
 import {bootstrap} from 'angular2/platform/browser';
 import {platform, provide} from 'angular2/core';
 import {ROUTER_PROVIDERS, LocationStrategy, PathLocationStrategy} from 'angular2/router';
@@ -9,4 +10,6 @@ bootstrap(App, [
 	ROUTER_PROVIDERS,
   SHARED_PROVIDERS,
   provide(LocationStrategy, {useClass: PathLocationStrategy})
-]);
+]).then((ref) => {
+  (<any> window).preboot.complete();
+});
