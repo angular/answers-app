@@ -35,7 +35,7 @@ app.use('/', (req, res) => {
     provide(REQUEST_URL, {useValue: req.originalUrl}),
     provide(APP_BASE_HREF, {useValue: `http://localhost:3000${req.baseUrl}`}),
     SHARED_PROVIDERS
-  ] });
+  ] , preboot: true});
 });
 
 // Server
