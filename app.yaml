@@ -1,0 +1,12 @@
+# [START runtime]
+runtime: nodejs
+vm: true
+# [END runtime]
+
+# Temporary setting to keep gcloud from uploading node_modules
+skip_files:
+ - ^node_modules$
+ - ^src$
+ - ^tasks$
+ - ^typings$
+ - ^build$

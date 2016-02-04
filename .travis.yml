@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 node_js:
-- '5.4.1'
+  - 5.4.1
 
 addons:
   firefox: latest
@@ -26,6 +26,17 @@ script:
 
 notifications:
   webhooks:
-    on_success: always  # options: [always|never|change] default: always
-    on_failure: always  # options: [always|never|change] default: always
-    on_start: false     # default: false
+    on_success: always
+    on_failure: always
+    on_start: false
+
+deploy:
+  - provider: gae
+    keyfile: Houston-be1666ecca81.json
+    project: houston-1197
+    default: true
+    on:
+      repo: angular/answers-app
+
+after_success:
+  - '[[ $TRAVIS_PULL_REQUEST = "false" ]] && [[ $TRAVIS_BRANCH = "master" ]] && echo "deploying" && openssl aes-256-cbc -K $encrypted_8658c7e4e38a_key -iv $encrypted_8658c7e4e38a_iv -in Houston-be1666ecca81.json.enc -out Houston-be1666ecca81.json -d'
