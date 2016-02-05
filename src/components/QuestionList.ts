@@ -5,7 +5,8 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
   selector: 'question-list',
   template: `
     <div class="card" *ngFor="#question of questions">
-      <h3><a [routerLink]="['QuestionDetail', {id: question.id}]">{{question.title}}</a></h3>
+      <h3><a [routerLink]="['QuestionDetail', {id: question.key() }]">{{ question.val().title }}</a></h3>
+      <p>{{ question.val().text }}</p>
     </div>
   `,
   directives: [ROUTER_DIRECTIVES]

@@ -1,12 +1,13 @@
 import {provide} from 'angular2/core';
+import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
 
 import {AuthService} from './services/Auth';
-import {Backend, BackendConfig} from './services/Backend';
+import {QuestionService} from './services/QuestionService';
 
-export const FIREBASE_URL = 'https://ng2-forum-demo.firebaseio.com';
 
 export const SHARED_PROVIDERS = [
   AuthService,
-  Backend,
-  provide(BackendConfig, {useValue: {url: FIREBASE_URL }})
+  QuestionService,
+  FIREBASE_PROVIDERS,
+  defaultFirebase('answers-mobile.firebaseio.com')
 ];
