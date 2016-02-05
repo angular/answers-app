@@ -10,7 +10,8 @@ System.config({
 			rxjs: 'node_modules/rxjs',
 			'reflect-metadata': 'node_modules/reflect-metadata/temp/Reflect.js',
 			'zone.js': 'node_modules/zone.js/dist/zone.js',
-			firebase: 'node_modules/firebase/lib/firebase-web.js'
+			firebase: 'node_modules/firebase/lib/firebase-web.js',
+      angularfire2: 'node_modules/angularfire2/dist'
 		},
 		packages: {
 			app: {
@@ -25,6 +26,10 @@ System.config({
 			},
 			'reflect-metadata': {
 				format: 'global'
-			}
+			},
+      angularfire2: {
+        defaultExtension: 'js',
+        main: 'angularfire.js'
+      }
 		}
 });
