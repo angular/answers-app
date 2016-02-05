@@ -12,8 +12,9 @@
         "noResolve": false
     },
     "files": [
-      "src/main.ts",
-      "src/main-server.ts",
-      "typings/main.d.ts"
+      "typings/main.d.ts",
+      "src/worker/main_worker.ts",
+      "src/ui/main_ui.ts",
+      "src/main-server.ts"
     ]
 }

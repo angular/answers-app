@@ -24,7 +24,11 @@ export const compile = (gulp, config) => {
 
 		return builder.loadConfig(config.system.configFile)
 		  .then(() => {
-				return builder.bundle('app - dist/vendor.js', 'dist/app.js', {minify: util.env.production})
+        return builder.bundle('app/ui - dist/vendor_ui.js', 'dist/app_ui.js', {minify: util.env.production})
+        .then(() => {
+          return builder.bundle('app/worker - dist/vendor_worker.js', 'dist/app_worker.js',
+                                {minify: util.env.production});
+        });
 			})
 	});
 
@@ -34,7 +38,11 @@ export const compile = (gulp, config) => {
 
 		return builder.loadConfig(config.system.configFile)
 		  .then(() => {
-				return builder.bundle('app - [app/**/*]', 'dist/vendor.js', {minify: util.env.production})
+        return builder.bundle('app/ui - [app/**/*]', 'dist/vendor_ui.js', {minify: util.env.production})
+        .then(() => {
+          return builder.bundle('app/worker - [app/**/*]', 'dist/vendor_worker.js',
+                                {minify: util.env.production});
+        });
 			})
 	});
 
