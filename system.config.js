@@ -11,7 +11,7 @@ System.config({
 			'reflect-metadata': 'node_modules/reflect-metadata/temp/Reflect.js',
 			'zone.js': 'node_modules/zone.js/dist/zone.js',
 			firebase: 'node_modules/firebase/lib/firebase-web.js',
-      angularfire2: 'node_modules/angularfire2/dist'
+      angularfire2: 'node_modules/angularfire2'
 		},
 		packages: {
 			app: {
