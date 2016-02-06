@@ -1,8 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component, ChangeDetectionStrategy} from 'angular2/core';
 import {Nav} from '../services/Nav';
-import {Backend} from '../services/Backend'
+import {QuestionService} from '../services/QuestionService';
 import {QuestionList} from '../components/QuestionList'
-import {Data} from '../services/Data';
 
 @Component({
   selector: 'home-container',
@@ -10,13 +9,11 @@ import {Data} from '../services/Data';
     <div class="card">
       <h3>Recent Questions</h3>
     </div>
-    <question-list [questions]="questions"></question-list>
+    <question-list [questions]="questionService.questions | async"></question-list>
   `,
-  directives: [QuestionList]
+  directives: [QuestionList],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionsContainer {
-  questions;
-  constructor(private backend:Backend){
-    this.questions = [];
-  }
+  constructor(private questionService:QuestionService){}
 }

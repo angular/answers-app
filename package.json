@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "angular2": "2.0.0-beta.1",
+    "angularfire2": "2.0.0-alpha.5",
     "angular2-universal-preview": "0.32.0",
     "es6-promise": "3.0.2",
     "es6-shim": "0.33.13",
