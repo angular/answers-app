@@ -8,15 +8,26 @@ System.config({
 			app: './src',
 			angular2: 'node_modules/angular2',
 			rxjs: 'node_modules/rxjs',
+      parse5: 'node_modules/parse5',
 			'reflect-metadata': 'node_modules/reflect-metadata/temp/Reflect.js',
 			'zone.js': 'node_modules/zone.js/dist/zone.js',
 			firebase: 'node_modules/firebase/lib/firebase-web.js'
 		},
 		packages: {
-			app: {
+			'app/worker': {
 				defaultExtension: 'ts',
-				main: 'main.ts'
+				main: 'main_worker.ts'
 			},
+			'app/ui': {
+				defaultExtension: 'ts',
+				main: 'main_ui.ts'
+			},
+			'app/shared': {
+				defaultExtension: 'ts'
+			},
+      app: {
+				defaultExtension: 'ts'
+      },
 			angular2: {
 				defaultExtension: 'js',
 			},
@@ -25,6 +36,9 @@ System.config({
 			},
 			'reflect-metadata': {
 				format: 'global'
-			}
+			},
+      parse5: {
+        defaultExtension: 'js'
+      }
 		}
 });

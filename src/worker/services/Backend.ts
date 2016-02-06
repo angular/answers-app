@@ -1,6 +1,7 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../../typings/tsd.d.ts" />
 
-import Firebase from 'firebase'
+import * as Firebase from 'firebase'
+//var Firebase = require("Firebase");
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {ReplaySubject} from 'rxjs/subject/ReplaySubject';
@@ -15,7 +16,7 @@ export class Backend {
 	ref: Firebase;
 	constructor(config: BackendConfig){
     try {
-      this.ref = new Firebase(config.url);
+      this.ref = new Firebase.default(config.url);
     } catch(e) {
       console.error('something went wrong', config.url, e);
     }
