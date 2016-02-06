@@ -12,8 +12,6 @@ import {SHARED_PROVIDERS} from './shared-providers';
 // Angular 2
 import {App} from './app/app';
 
-const PORT = process.env.PORT || 3000;
-
 let app = express();
 let root = path.join(path.resolve(__dirname, '..'));
 
@@ -30,12 +28,12 @@ app.use('/', (req, res) => {
   res.render('index', { App, providers: [
     ROUTER_PROVIDERS,
     SERVER_LOCATION_PROVIDERS,
-    provide(APP_BASE_HREF, {useValue: `http://localhost:${PORT}${req.baseUrl}`}),
+    provide(APP_BASE_HREF, {useValue: `http://localhost:3000${req.baseUrl}`}),
     SHARED_PROVIDERS
   ] });
 });
 
 // Server
-app.listen(PORT, () => {
-  console.log(`Listen on http://localhost:${PORT}`);
+app.listen(3000, () => {
+  console.log('Listen on http://localhost:3000');
 });

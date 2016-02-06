@@ -25,7 +25,7 @@ $ karma start
 
 ```
 $ gulp
-$ npm start
+$ npm run start_universal
 ```
 
 Then navigate to localhost:3000
