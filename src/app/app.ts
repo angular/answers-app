@@ -5,8 +5,7 @@ import {Router, Route, RouteConfig, AsyncRoute, ROUTER_DIRECTIVES} from 'angular
 //app services
 import {AuthService} from '../services/Auth';
 import {Nav} from '../services/Nav';
-import {Backend, BackendConfig} from '../services/Backend';
-
+import {QuestionService} from '../services/QuestionService';
 //generic components
 import {AppHeader} from '../components/header';
 import {SideNav} from '../components/sidenav';
@@ -37,10 +36,10 @@ import {About} from '../components/About';
 	new Route({ name: 'About', component: About, path: '/about' })
 ])
 export class App {
-	constructor(public backend: Backend, public nav: Nav) { }
+	constructor(public nav: Nav) { }
 
 	authenticate() {
-		this.backend.authenticate()
+		//this.backend.authenticate()
 	}
 	showToast(message) { }
 }
