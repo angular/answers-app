@@ -6,7 +6,7 @@ var ts = require('gulp-typescript');
 
 export const compile = (gulp, config) => {
   gulp.task('compile:main-server', () => {
-    return gulp.src('src/**/*.ts')
+    return gulp.src(['src/**/*.ts', 'typings/main.d.ts'])
       .pipe(ts({
         noImplicitAny: false,
         typescript: require('typescript'),

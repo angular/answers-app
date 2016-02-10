@@ -10,16 +10,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "angular2": "2.0.0-beta.1",
-    "angularfire2": "2.0.0-alpha.5",
-    "angular2-universal-preview": "0.32.0",
-    "es6-promise": "3.0.2",
+    "angular2": "2.0.0-beta.6",
+    "angular2-universal-preview": "0.52.0",
+    "angularfire2": "2.0.0-alpha.8",
+    "css": "^2.2.1",
+    "es6-promise": "^3.0.2",
     "es6-shim": "0.33.13",
     "express": "4.13.3",
-    "firebase": "2.3.2",
+    "firebase": "2.4.0",
+    "parse5": "^1.5.0",
+    "preboot": "^1.1.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.10"
+    "zone.js": "^0.5.11"
   },
   "devDependencies": {
     "es6-module-loader": "0.17.10",

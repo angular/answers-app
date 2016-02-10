@@ -29,7 +29,7 @@ System.config({
 			},
       angularfire2: {
         defaultExtension: 'js',
-        main: 'angularfire.js'
+        main: 'angularfire2.js'
       }
 		}
 });

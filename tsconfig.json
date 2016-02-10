@@ -13,6 +13,7 @@
     },
     "files": [
       "src/main.ts",
-      "src/main-server.ts"
+      "src/main-server.ts",
+      "typings/main.d.ts"
     ]
 }
