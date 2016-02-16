@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-
 import * as Firebase from 'firebase'
 //var Firebase = require("Firebase");
 import {Injectable} from 'angular2/core';
@@ -16,7 +14,7 @@ export class Backend {
 	ref: Firebase;
 	constructor(config: BackendConfig){
     try {
-      this.ref = new Firebase.default(config.url);
+      this.ref = new Firebase(config.url);
     } catch(e) {
       console.error('something went wrong', config.url, e);
     }
