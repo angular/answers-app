@@ -16,10 +16,6 @@ import {
 
 import {About} from './About';
 
-setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS,
-                     TEST_BROWSER_APPLICATION_PROVIDERS);
-
-
 describe('About', () => {
   it('should have About text', inject([TestComponentBuilder], (tcb:TestComponentBuilder) => {
     tcb.createAsync(About)

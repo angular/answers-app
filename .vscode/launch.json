@@ -25,6 +25,12 @@
 			"type": "node",
 			"request": "attach",
 			"port": 5858
-		}
+		},
+    {
+      "name": "Karma",
+      "type": "node",
+      "program": "./node_modules/.bin/karma",
+      "args": ["start"]
+    }
 	]
 }
