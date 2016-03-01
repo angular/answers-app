@@ -1,9 +1,9 @@
 import {provide} from 'angular2/core';
 import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
 
-import {AuthService} from './worker/services/Auth';
-import {Backend, BackendConfig} from './worker/services/Backend';
-import {QuestionService} from './worker/services/QuestionService';
+import {AuthService} from '../services/Auth';
+import {Backend, BackendConfig} from '../services/Backend';
+import {QuestionService} from '../services/QuestionService';
 
 
 export const SHARED_PROVIDERS = [

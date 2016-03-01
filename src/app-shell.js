@@ -2,7 +2,7 @@
 
 System.config({
 	map: {
-		app: 'src/ui/main_ui.ts'
+		app: 'src/app/ts/main.ts'
 	}
 });
 

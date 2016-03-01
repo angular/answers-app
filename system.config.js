@@ -15,19 +15,9 @@ System.config({
       angularfire2: 'node_modules/angularfire2'
 		},
 		packages: {
-			'app/worker': {
-				defaultExtension: 'ts',
-				main: 'main_worker.ts'
-			},
-			'app/ui': {
-				defaultExtension: 'ts',
-				main: 'main_ui.ts'
-			},
-			'app/shared': {
-				defaultExtension: 'ts'
-			},
       app: {
-				defaultExtension: 'ts'
+				defaultExtension: 'ts',
+        main: 'app/ts/main.ts'
       },
 			angular2: {
 				defaultExtension: 'js',
