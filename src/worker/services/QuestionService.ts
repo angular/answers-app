@@ -1,4 +1,4 @@
-import {AngularFire, FirebaseObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {ReplaySubject} from 'rxjs/subject/ReplaySubject';
@@ -10,9 +10,9 @@ const QUESTIONS_PATH = '/questions';
 
 @Injectable()
 export class QuestionService {
-	questions:FirebaseObservable<any>;
+	questions:FirebaseListObservable<any>;
 	constructor(angularFire: AngularFire){
-    this.questions = angularFire.list(QUESTIONS_PATH);
+    this.questions = angularFire.list(QUESTIONS_PATH, {preserveSnapshot: true});
 	}
   getQuestionById(id:string){
     return this.questions
