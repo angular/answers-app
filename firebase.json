@@ -1,5 +1,5 @@
 {
-  "firebase": "ng2-forum-demo",
+  "firebase": "answers-mobile",
   "public": "dist",
   "ignore": [
     "firebase.json",
