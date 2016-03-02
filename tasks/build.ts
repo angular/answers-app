@@ -5,6 +5,7 @@ const inline = require('gulp-inline');
 const minifyCSS = require('gulp-minify-css');
 const path = require('path');
 const swPrecache = require('sw-precache');
+const clean = require('gulp-clean');
 
 export const build = (gulp, config) => {
   
@@ -22,7 +23,14 @@ export const build = (gulp, config) => {
 
 	});
   
-  gulp.task('build:sw-precache', ['build'], (done) => {
+  gulp.task('clean:sw-precache', () => {
+    return gulp.src([
+        'dist/service-worker.js'
+      ], {read: false})
+      .pipe(clean());
+  });
+  
+  gulp.task('build:sw-precache', ['build', 'clean:sw-precache'], (done) => {
     swPrecache.write(
       'dist/service-worker.js',
       {
