@@ -8,6 +8,7 @@ import {platform, provide, ComponentRef, Injector} from 'angular2/core';
 import {APP_BASE_HREF} from 'angular2/router';
 import {BOOTSTRAP_CHANNEL} from '../shared/channels';
 import {SHARED_PROVIDERS} from '../shared-providers';
+import {WORKER_APP_FIREBASE_PROVIDERS} from 'angularfire2/angularfire2_worker_app';
 
 import {App} from './app/app';
 
@@ -15,6 +16,7 @@ platform([WORKER_APP_PLATFORM])
 .asyncApplication(null, [
   WORKER_APP_ROUTER,
   WORKER_APP_APPLICATION,
+  WORKER_APP_FIREBASE_PROVIDERS,
   provide(APP_BASE_HREF, {useValue: '/'}),
   SHARED_PROVIDERS
 ]).then((appRef) => appRef.bootstrap(App).then((compRef: ComponentRef) => {
