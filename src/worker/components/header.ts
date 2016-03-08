@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, ChangeDetectionStrategy} from 'angular2/core';
 import {Nav} from '../services/Nav';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {FirebaseAuth} from 'angularfire2';
@@ -13,6 +13,7 @@ import {FirebaseAuth} from 'angularfire2';
     <a class="header__item" *ngIf="auth | async" (click)="logout()">Logout</a>
     <a class="header__item" [routerLink]="['CreateQuestion']">New Question</a>
 	`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   directives: [ROUTER_DIRECTIVES]
 })
 export class AppHeader {
