@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: h2o
+spec:
+  type: LoadBalancer
+  selector:
+    app: answers-app
+    type: h2o
+  ports:
+  - protocol: TCP
+    port: 443
+    targetPort: 8081
