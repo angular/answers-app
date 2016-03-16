@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: answers-app-h2o
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: answers-app
+        type: h2o
+    spec:
+      containers:
+      - name: h2o
+        image: us.gcr.io/angular-mobile/answers-app-h2o:v1458166754
+        ports:
+        - containerPort: 8081

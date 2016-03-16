@@ -11,8 +11,8 @@ const copy  = (gulp, config) => {
 		  .pipe(gulp.dest(config.dist));
 	});
   
-  gulp.task('clean:docker:h2o', () => del(['docker/h2o']));
-  gulp.task('clean:docker:universal', () => del(['docker/universal']));
+  gulp.task('clean:docker:h2o', () => del(['docker/dist/h2o']));
+  gulp.task('clean:docker:universal', () => del(['docker/dist/universal']));
 	
   gulp.task('copy:docker', ['copy:docker:h2o', 'copy:docker:universal']);
   
@@ -28,33 +28,30 @@ const copy  = (gulp, config) => {
     done
   ));
   
-  gulp.task('!copy:docker:h2o', () => gulp
+  gulp.task('!copy:dockerfile:h2o', () => gulp
+    .src(['docker/Dockerfile.h2o'], {base: 'docker'})
+    .pipe(rename(path => path.extname = ''))
+    .pipe(gulp.dest('docker/dist/h2o')));
+
+  gulp.task('!copy:docker:h2o', ['!copy:dockerfile:h2o'], () => gulp
     .src([
       'dist/**',
-      'h2o.conf',
-      'Dockerfile.h2o',
+      'docker/h2o.conf',
       'server/**'
     ], {base: process.cwd()})
-    .pipe(rename(path => {
-      if (path.extname == '.h2o') {
-        path.extname = '';
-      }
-    }))
-    .pipe(gulp.dest('docker/h2o')));
+    .pipe(gulp.dest('docker/dist/h2o')));
     
-    
-  gulp.task('!copy:docker:universal', () => gulp
+  gulp.task('!copy:dockerfile:universal', () => gulp
+    .src(['docker/Dockerfile.universal'], {base: 'docker'})
+    .pipe(rename(path => path.extname = ''))
+    .pipe(gulp.dest('docker/dist/universal')));
+
+  gulp.task('!copy:docker:universal', ['!copy:dockerfile:universal'], () => gulp
     .src([
       'dist/**',
       'package.json',
-      'Dockerfile.universal',
     ], {base: process.cwd()})
-    .pipe(rename(path => {
-      if (path.extname == '.universal') {
-        path.extname = '';
-      }
-    }))
-    .pipe(gulp.dest('docker/universal')));
+    .pipe(gulp.dest('docker/dist/universal')));
 }
 
 export {copy};
