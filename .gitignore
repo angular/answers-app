@@ -1,8 +1,9 @@
 /dist
 /node_modules
 /tmp
-/docker
+/docker/dist
 typings/
 build/
 npm-debug.log
-
+tmp/
+logs/
