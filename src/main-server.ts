@@ -7,6 +7,7 @@ import {
   ng2engine,
   REQUEST_URL
 } from 'angular2-universal-preview/dist/server';
+import {FIREBASE_PROVIDERS} from 'angularfire2';
 
 import {provide} from 'angular2/core';
 import {APP_BASE_HREF, ROUTER_PROVIDERS} from 'angular2/router';
@@ -32,6 +33,7 @@ app.use('/', (req, res) => {
   res.render('index', { App, providers: [
     ROUTER_PROVIDERS,
     SERVER_LOCATION_PROVIDERS,
+    FIREBASE_PROVIDERS,
     provide(REQUEST_URL, {useValue: req.originalUrl}),
     provide(APP_BASE_HREF, {useValue: `http://localhost:3000${req.baseUrl}`}),
     provide(REQUEST_URL, {useValue: 'http://localhost:3000'}),
