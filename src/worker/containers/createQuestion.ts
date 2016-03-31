@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {QuestionService} from '../services/QuestionService';
 import {Router, RouteConfig} from 'angular2/router'
 import {FirebaseAuth} from 'angularfire2';
+import {CKEditorDirective} from '../directives/ckeditor_directive';
 
 @Component({
   selector: 'create-question-container',
@@ -15,7 +16,7 @@ import {FirebaseAuth} from 'angularfire2';
         <div class="new-question-container">
          
           <input type="text" placeholder="Question Title" [(ngModel)]="newQuestion.title"/>
-          <textarea placeholder="Ask your Question Here" [(ngModel)]="newQuestion.text"></textarea>
+          <textarea ckeditor placeholder="Ask your Question Here" (change)="questionTextChanged($event.target.value)"></textarea>
        
         </div>
         <button (click)="addQuestion()">Save</button>
@@ -27,14 +28,19 @@ import {FirebaseAuth} from 'angularfire2';
         display: flex;
         flex-direction: column
     }`
-  ]
+  ],
+  directives: [CKEditorDirective]
 })
 export class CreateQuestionContainer {
-  newQuestion = {};
+  newQuestion: any = {};
   constructor(private questionService:QuestionService, private router:Router,
-              public auth: FirebaseAuth){}
-  addQuestion(){
+              public auth: FirebaseAuth) {}
+  addQuestion() {
    this.questionService.addQuestion(this.newQuestion);
    this.router.navigate(['../Questions']);
+  }
+
+  questionTextChanged(val: string) {
+    this.newQuestion.text = val;
   }
 }

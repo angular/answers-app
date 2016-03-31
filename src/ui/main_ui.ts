@@ -7,6 +7,7 @@ import {
 } from 'angular2/platform/worker_render';
 import {platform, provide} from 'angular2/core';
 import {BOOTSTRAP_CHANNEL} from '../shared/channels';
+import {CKEditorRenderer} from '../shared/ckeditor_renderer';
 import {
   defaultFirebase,
 } from 'angularfire2';
@@ -21,6 +22,7 @@ let appRef = platform([WORKER_RENDER_PLATFORM])
   defaultFirebase('answers-mobile.firebaseio.com'),
   WORKER_RENDER_APPLICATION,
   WORKER_RENDER_ROUTER,
+  CKEditorRenderer,
   provide(WORKER_SCRIPT, {useValue: '/loader.js'})
 ]);
 
@@ -34,3 +36,4 @@ bus.from(BOOTSTRAP_CHANNEL).subscribe((message: string) => {
 
 // Need to manually call start until https://github.com/angular/angular/issues/7420 is implemented
 appRef.injector.get(MessageBasedFirebaseAuth).start();
+appRef.injector.get(CKEditorRenderer).ngStartListening();
